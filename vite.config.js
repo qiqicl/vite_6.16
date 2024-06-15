@@ -1,9 +1,9 @@
 import {
     defineConfig
-} from 'vite'
+} from 'vite';
 import path, {
     join
-} from 'path'
+} from 'path';
 export default defineConfig({
     // 其他公用选项
     // 静态资源文件夹
@@ -35,24 +35,25 @@ export default defineConfig({
                 index: join(__dirname, './index.html'),
                 // search: join(__dirname, './search.html'),
                 detail: join(__dirname, './detail.html')
-            }
-        },
-        // assetsDir: './',
-        output: {
-            chunkFileNames: 'js/[name]-[hash:8].js',
-            entryFileNames: 'js/[name]-[hash:8].js',
-            assetFileNames: chunkInfo => {
-                const imageReg = /(png|gif|jpe?g|svg|webp)$/
-                const [, ext] = path.basename(chunkInfo.name).split('.')
-                if (ext === 'css') {
-                    return `css/[name]-[hash:8].${ext}`
-                } else if (imageReg.test(ext)) {
-                    return `images/[name]-[hash:8].${ext}`
+            },
+            // assetsDir: './',
+            output: {
+                chunkFileNames: 'js/[name]-[hash:8].js',
+                entryFileNames: 'js/[name]-[hash:8].js',
+                assetFileNames: chunkInfo => {
+                    const imageReg = /(png|gif|jpe?g|svg|webp)$/
+                    const [, ext] = path.basename(chunkInfo.name).split('.')
+                    if (ext === 'css') {
+                        return `css/[name]-[hash:8].${ext}`
+                    } else if (imageReg.test(ext)) {
+                        return `images/[name]-[hash:8].${ext}`
+                    }
+                    return 'assets/[name]-[hash:8].[ext]'
                 }
-                return 'assets/[name]-[hash:8].[ext]'
             }
         }
     },
+
     // 配置开发服务器
     server: {
         port: 8001,
