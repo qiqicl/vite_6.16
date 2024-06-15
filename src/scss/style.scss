@@ -1,0 +1,136 @@
+@import "./common.scss";
+
+.all {
+    width: 100%;
+    height: 100%;
+    background: white;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+header {
+    display: flex;
+    padding: 1rem;
+    align-items: center;
+    // height: 5rem;
+    div {
+        img {
+            width: 3rem;
+        }
+    }
+
+    input {
+        margin-left: 1rem;
+        padding: 0 1rem;
+        width: 28rem;
+        background: #EEEEEE;
+        border: 0;
+        border-radius: .5rem;
+        height: 2.5rem;
+    }
+}
+
+.swiper {
+    // position: relative;
+    --swiper-theme-color: #ff6600;
+    --swiper-pagination-color: #00ff33;
+    /* 两种都可以 */
+    img {
+        width: 35rem;
+        height: 15rem;
+    }
+
+    border-radius: 1rem;
+    width: 35rem;
+    height: 15rem;
+    background: white;
+}
+.swiper-pagination-bullet-active {
+    background-color: #e8561a;
+    width: 20px;
+    border-radius: 20px;
+}
+.bs{
+    width: 100%;
+    // overflow-x: auto;
+    overflow: hidden;
+}
+.menu{
+    width: 200%;
+    display: flex;
+    margin-top: 1rem;
+    justify-content: space-between;
+    // overflow-x: auto;
+    // &::-webkit-scrollbar{
+    //     display: none;
+    // }
+    &>div{
+        margin-left: 1rem;
+        margin-right: 1rem;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+    .org{
+        width: 5rem;
+        height: 5rem;
+        border-radius: 50%;
+        background: #C84341;
+        img{
+            width: 5rem;
+        }
+    }
+}
+.comSong{
+    padding: 1rem;
+}
+.tit1{
+    border-left: .5rem solid #C44240;
+    padding-left: 1rem;
+}
+.comDish{
+    display: flex;
+    overflow-x: auto;
+    margin-top: 1rem;
+    &::-webkit-scrollbar{
+        display: none;
+    }
+}
+.dish{
+    margin-left: 1rem;
+    img{
+        height: 12rem;
+        width: 15rem;
+    }
+    
+}
+section{
+    flex: 1;
+    overflow-y: auto;
+}
+.fashion{
+    margin-left: 1rem;
+}
+.tit2{
+    border-left: .5rem solid #C44240;
+    padding-left: 1rem;
+}
+footer{
+    margin-top: auto;
+    // flex-shrink: 0;
+    background: white;
+    display: flex;
+    // position: fixed;
+    // bottom: 0;
+    justify-content: space-between;
+    width: 100%;
+    height: 4rem;
+    border-top: .1rem solid #eee;
+    div{
+        text-align: center;
+        flex: 1;
+        line-height: 4rem;
+    }
+}
