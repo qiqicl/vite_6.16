@@ -29,16 +29,12 @@ window.onload = () => {
             type: 'bullets',
         },
     })
-    new Swiper('.swiper2', {
-        direction: 'horizontal', // 垂直切换选项
-    })
     bannerAxios("/api/banner")
     dishAxios("/api/personalized")
-    fashionAxios("/api/album/newest")
     async function bannerAxios(url){
         const res = await axios.get(url)
         console.log(res)
-        $(".swiper .swiper-wrapper").innerHTML = res.data.banners.map((item)=>{
+        $(".swiper-wrapper").innerHTML = res.data.banners.map((item)=>{
             return `<div class="swiper-slide"><img src="${item.imageUrl}" alt=""></div>`
         }).join("")
     }
@@ -50,12 +46,5 @@ window.onload = () => {
         $(".comDish").innerHTML = data.map((item)=>{
             return `<div class="dish"><img src="${item.picUrl}" alt=""><span>${item.name}</span></div>`
         }).join("")
-    }
-    async function fashionAxios(url){
-        const res = await axios.get(url)
-        console.log(res)
-        $(".swiper2 .swiper-wrapper").innerHTML = res.data.albums.map((item)=>{
-            return `<div class="swiper-slide"><img src="${item.picUrl}" alt=""><span>${item.artist.name}</span><audio src=""></audio></div>`
-        })
     }
 }
