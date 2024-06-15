@@ -1,9 +1,9 @@
-import '../scss/style.scss'
+import './style.scss'
 import BScroll from "better-scroll";
 import {
     $,
     $all
-} from "./utils"
+} from "../../utils/utils.js"
 import Swiper from 'swiper';
 import 'swiper/css';
 import axios from "axios"

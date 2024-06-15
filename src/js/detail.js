@@ -1,1 +1,0 @@
-import "../scss/detail.scss"

@@ -2,8 +2,7 @@ import {
     defineConfig
 } from 'vite'
 import path, {
-    join,
-    resolve
+    join
 } from 'path'
 export default defineConfig({
     // 其他公用选项
@@ -25,9 +24,9 @@ export default defineConfig({
         // 出口目录
         outDir: 'build',
         // 资源文件夹
-        // assetsDir: 'assets',
+        assetsDir: 'assets',
         // 小于 10kb 自动转成 base64
-        // assetsInlineLimit: 10 * 1024,
+        assetsInlineLimit: 10 * 1024,
         sourcemap: false,
         emptyOutDir: true,
         // 传给 rollup 的配置
