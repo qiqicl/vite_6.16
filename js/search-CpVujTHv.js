@@ -1,0 +1,1 @@
+import{$ as o}from"./utils-DoGb0hfw.js";import{a as r}from"./axios-B4uVmeYG.js";document.addEventListener("keyup",i=>{let t=o(".search").value;console.log(t),a(t)});async function a(i){let e=(await r.get("/api/zh")).data.items;e=e.filter(n=>n.title.includes(i)),console.log(e),o("ul").innerHTML=e.map(n=>`<li>${n.title}</li>`).join("")}
