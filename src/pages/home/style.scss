@@ -68,6 +68,7 @@ header {
         margin-left: .5rem;
         width: 4rem;
         pointer-events: none;
+        display: none;
     }
 }
 
@@ -132,4 +133,7 @@ ul {
             width: 10rem;
         }
     }
+}
+.show{
+    display: block !important;
 }

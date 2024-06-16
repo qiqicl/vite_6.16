@@ -26,7 +26,7 @@ export default defineConfig({
         // 资源文件夹
         assetsDir: 'assets',
         // 小于 10kb 自动转成 base64
-        assetsInlineLimit: 10 * 1024,
+        // assetsInlineLimit: 10 * 1024,
         sourcemap: false,
         emptyOutDir: true,
         // 传给 rollup 的配置

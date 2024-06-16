@@ -59,11 +59,13 @@ document.addEventListener("click", (e) => {
     }
     if (target.classList.contains("cut")) {
         if (flagRender) {
-            target.firstElementChild.src = "/vite_6.16/src/assets/综合.png"
+            $(".show")&&$(".show").classList.remove("show")
+            $(".i2").classList.add("show")
             $("ul").classList.add("sortUl")
             flagRender = 0
         } else {
-            target.firstElementChild.src = "/vite_6.16/src/assets/排序.png"
+            $(".show")&&$(".show").classList.remove("show")
+            $(".i1").classList.add("show")
             $("ul").classList.remove("sortUl")
             flagRender = 1
         }
