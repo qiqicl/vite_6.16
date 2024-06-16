@@ -59,13 +59,13 @@ export default defineConfig({
         port: 8001,
         open: true,
         hmr: false,
-        proxy: {
-            // 带选项写法：http://localhost:5173/api/bar -> http://jsonplaceholder.typicode.com/bar
-            '/api': {
-                target: 'https://zyxcl.xyz/exam_api/',
-                changeOrigin: true,
-                rewrite: (path) => path.replace(/^\/api/, ''),
-            },
-        }
+        // proxy: {
+        //     // 带选项写法：http://localhost:5173/api/bar -> http://jsonplaceholder.typicode.com/bar
+        //     '/api': {
+        //         target: 'https://zyxcl.xyz/exam_api/',
+        //         changeOrigin: true,
+        //         rewrite: (path) => path.replace(/^\/api/, ''),
+        //     },
+        // }
     },
 })

@@ -9,6 +9,7 @@ let flagLight = 1
 let flagRender = 1
 let flagSort = 0
 let now = "zh"
+let num = 0
 renderSyn()
 document.addEventListener("click", (e) => {
     let target = e.target || window.event.srcElement
@@ -32,6 +33,21 @@ document.addEventListener("click", (e) => {
     }
     if (target.classList.contains("sort")) {
         flagSort = 1
+        num++
+        if(num%3===0){
+            flagSort = 0
+            $(".up") && $(".up").classList.remove("up")
+        }else{
+            if (flagLight) {
+                $(".up") && $(".up").classList.remove("up")
+                target.firstElementChild.firstElementChild.classList.add("up")
+                flagLight = 0
+            } else {
+                $(".up") && $(".up").classList.remove("up")
+                target.firstElementChild.lastElementChild.classList.add("up")
+                flagLight = 1
+            }
+        }
         if (now === "zh") {
             renderSyn()
         } else if (now === "xl") {
@@ -39,15 +55,7 @@ document.addEventListener("click", (e) => {
         } else if (now === "sx") {
             renderAddNew()
         }
-        if (flagLight) {
-            $(".up") && $(".up").classList.remove("up")
-            target.firstElementChild.firstElementChild.classList.add("up")
-            flagLight = 0
-        } else {
-            $(".up") && $(".up").classList.remove("up")
-            target.firstElementChild.lastElementChild.classList.add("up")
-            flagLight = 1
-        }
+        
     }
     if (target.classList.contains("cut")) {
         if (flagRender) {
@@ -70,7 +78,7 @@ document.addEventListener("click", (e) => {
     }
 })
 async function renderDetail(index, now) {
-    const res = await axios.get(`/api/${now}`)
+    const res = await axios.get(`https://zyxcl.xyz/exam_api/${now}`)
     console.log(res)
     const data = res.data.items.find((item) => {
         return index == item.item_id
@@ -80,7 +88,7 @@ async function renderDetail(index, now) {
     window.location.href = "http://localhost:8001/vite_6.16/detail"
 }
 async function renderSyn() {
-    const res = await axios.get("/api/zh")
+    const res = await axios.get("https://zyxcl.xyz/exam_api/zh")
     console.log(res)
     const data = res.data.items
     // console.log(data)
@@ -98,7 +106,7 @@ async function renderSyn() {
     render(data)
 }
 async function renderSales() {
-    const res = await axios.get("/api/xl")
+    const res = await axios.get("https://zyxcl.xyz/exam_api/xl")
     console.log(res)
     const data = res.data.items
     // console.log(data)
@@ -116,7 +124,7 @@ async function renderSales() {
     render(data)
 }
 async function renderAddNew() {
-    const res = await axios.get("/api/sx")
+    const res = await axios.get("https://zyxcl.xyz/exam_api/sx")
     console.log(res)
     const data = res.data.items
     // console.log(data)
