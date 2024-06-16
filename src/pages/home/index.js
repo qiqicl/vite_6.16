@@ -76,7 +76,7 @@ document.addEventListener("click", (e) => {
         renderDetail(index, now)
     }
     if (target.classList.contains("search")) {
-        window.location.href = "http://localhost:8001/vite_6.16/search"
+        window.location.href = "https://qiqicl.github.io/vite_6.16/search"
     }
 })
 async function renderDetail(index, now) {
@@ -87,7 +87,7 @@ async function renderDetail(index, now) {
     })
     console.log(data)
     localStorage.setItem("index", JSON.stringify(data))
-    window.location.href = "http://localhost:8001/vite_6.16/detail"
+    window.location.href = "https://qiqicl.github.io/vite_6.16/detail"
 }
 async function renderSyn() {
     const res = await axios.get("https://zyxcl.xyz/exam_api/zh")
